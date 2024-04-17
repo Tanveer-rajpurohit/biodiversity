@@ -12,39 +12,12 @@ a{
     text-decoration: none;
 }
 
-header{
-    width: 1140px;
-    max-width: 80%;
-    margin: auto;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-}
-
-header a{
-    color: #eee;
-    margin-right: 5px;
-    padding: 5px 10px;
-    transition: 0.2s;
-}
-
-a.active{
-    background: #14ff72cb;
-    border-radius: 2px;
-}
-
-header a:hover{
-    background: #14ff72cb;
-    border-radius: 2px;
-}
 
 
 /* slider section  */
 
 .slider{
-    height: 100vh;
+    height: 107vh; 
     margin-top: -50px;
     width: 100vw;
     overflow: hidden;
@@ -90,21 +63,27 @@ header a:hover{
     gap: 5px;
     margin-top: 20px;
 }
-.slider .list .item .button button{
+.slider .list .item .button .Explore{
     border: none;
     background-color: #eee;
     font-family: Poppins;
-    font-weight: 500;
+    /* font-weight: 500; */
     cursor: pointer;
     transition: 0.4s;
     letter-spacing: 2px;
+    color: #000;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    font-size: 15px;  
+    font-weight: 400;   
 }
 
 
-.slider .list .item .button button:hover{
+.slider .list .item .button .Explore:hover{
     letter-spacing: 3px;
 }
-.slider .list .item .button button:nth-child(2){
+.slider .list .item .button .Explore:nth-child(2){
     background-color: transparent;
     border: 1px solid #fff;
     color: #eee;
