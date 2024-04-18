@@ -16,46 +16,11 @@ p {
 a {
   color: #000;
 }
-/* navbar */
-.navbar-fixed-top.scrolled {
-  background-color: #5555558a !important;
-  transition: background-color 200ms linear;
-  color: #fff;
-}
-.navbar {
-}
-@media only screen and (min-width: 768px) {
-  .navbar {
-    background: transparent;
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 5;
-  }
-  .nav-link {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    letter-spacing: 1px;
-    margin-left: 20px;
-  }
-}
-.navbar-brand {
-  color: #ffc815;
-}
-/* section-heading-block */
-.section-heading-block {
-  text-align: center;
-  width: 70%;
-  position: relative;
-  margin: 50px auto;
-}
 .section-heading-block::after {
   position: absolute;
   width: 100px;
   height: 2px;
-  background: #ffc815;
+  /* background: #ffc815; */
   content: "";
   bottom: -10px;
   margin: auto;
@@ -235,7 +200,7 @@ a {
   bottom: -3px;
   height: 2px;
   width: 100%;
-  background: #ffc815;
+  /* background: #ffc815; */
   transform-origin: 0 0;
   transform: scaleX(0) translateZ(0);
   transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1);
@@ -353,15 +318,7 @@ a {
   transform: translateY(100px);
 }
 
-/* about-us */
-.about-us {
-  position: relative;
-}
-/* coloured text block */
-.about-us .about-us-text-block {
-  background: #ffc815;
-  padding: 60px;
-}
+
 @media only screen and (min-width: 768px) {
   .about-us .about-us-text-block {
     width: 512px;
@@ -526,115 +483,12 @@ a {
   font-size: 12px;
 }
 
-/* footer */
-
-footer {
-  background: linear-gradient(#131313e1, #181818e1),
-    url(https://acme-world.com/static/admin/wp-content/uploads/20190819_095818-2-1600x816.jpg)
-      no-repeat;
-  color: #fff;
-  padding: 80px 0;
-  font-family: "Lato", sans-serif;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-footer p,
-footer ul li a {
-  font-size: 0.8em;
-  color: rgb(214, 214, 214);
-  text-transform: capitalize;
-}
-
-footer ul li {
-  margin-bottom: 10px;
-  list-style: none;
-}
-
-footer h6 {
-  text-transform: uppercase;
-  color: rgb(214, 214, 214);
-  margin-bottom: 30px;
-}
-
-footer strong {
-  color: #ffc815;
-}
-
-footer p strong {
-  color: #ffc815;
-  font-size: 1.2em;
-  font-weight: 600;
-}
-
-@media only screen and (max-width: 600px) {
-  footer .address > div {
-    width: 33%;
-    float: left;
-  }
-  footer ul {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-footer ul li::before {
-  content: "\2022";
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-}
-
-footer ul li a:hover {
-  color: #ffc815;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-footer .social-icons {
-  display: flex;
-  margin-top: 40px;
-}
-
-footer .social-icons > a {
-  flex: 1;
-  text-align: center;
-  padding: 2px;
-  font-size: 0.8em;
-}
-
-footer .social-icons > a:nth-child(1) {
-  background-color: rgb(0, 100, 194);
-}
-
-footer .social-icons > a:nth-child(2) {
-  background-color: rgb(0, 217, 255);
-}
-
-footer .social-icons > a:nth-child(3) {
-  background-color: rgb(255, 136, 0);
-}
-
-footer .social-icons > a:nth-child(4) {
-  background-color: rgb(0, 132, 219);
-}
-
-footer .social-icons > a:nth-child(5) {
-  background-color: rgb(255, 56, 56);
-}
-
-footer .social-icons > a:nth-child(6) {
-  background-color: red;
-}
 /* single-service-page */
 
 .single-page-intro {
   height: 80vh;
   position: relative;
-  background: linear-gradient(#131313e1, #181818e1),
+  background: linear-gradient(#00B285, #39b1abe1),
     url(https://acme-world.com/static/admin/wp-content/uploads/20190819_095818-2-1600x816.jpg)
       no-repeat;
   color: #fff;
@@ -933,9 +787,7 @@ footer .social-icons > a:nth-child(6) {
 .our-skills {
   padding: 80px 0;
   position: relative;
-  background: linear-gradient(#131313e1, #181818e1),
-    url(https://acme-world.com/static/admin/wp-content/uploads/20190819_095818-2-1600x816.jpg)
-      no-repeat;
+  
   color: #fff;
   background-position: center;
   background-size: cover;
