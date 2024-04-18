@@ -561,8 +561,7 @@ a {
   justify-content: center;
   position: relative;
 }
-.all-services .section-heading-block {
-}
+
 .all-services::before {
   content: "";
   position: absolute;
