@@ -11,7 +11,7 @@ Table Of Contents:
 - Plans
 - Testimonials
 - Newsletter
-- Back To Top Button
+- Back To Top Buttons
 - Extra Pages
 - Media Queries
 ******************************************/
@@ -21,8 +21,8 @@ Table Of Contents:
 /*     General Styles     */
 /**************************/
 :root {
-	--primary: #1c262f;
-	--primary-light: #212d37;
+	--primary: #00B285;
+	--primary-light:#ffffff ;
 	--secondary: #0ee951;
 	--tertiary: #00dabf;
 	--gradient: linear-gradient(to right, #0ee951, #00dabf);
@@ -267,11 +267,11 @@ li {
 }
 
 .information .container-fluid .row div:last-child {
-  	background-color: white;
+  	background-color: #00B285;
 }
 
 .information .container-fluid .row div:nth-child(2) {
-  	background-color: var(--primary-light);
+  	background-color:#ffffff
 }
 
 
