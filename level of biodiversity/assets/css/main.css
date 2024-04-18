@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: rgba(99, 225, 225, 0.683);
+		background-color: #00B285;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -128,7 +128,7 @@ input, select, textarea {
 		}
 
 	body {
-		color: white;
+		color: rgb(0, 0, 0);
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 600;
 		font-size: 1rem;
@@ -150,7 +150,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #fefdfd;
+		color: #000000;
 		font-weight: 600;
 	}
 
@@ -163,7 +163,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #000000;
 		font-weight: 800;
 		font-style: oblique;
 		line-height: 1.5;
@@ -376,7 +376,7 @@ input, select, textarea {
 		.image:before {
 			pointer-events: none;
 			background-image: url("../../images/overlay.png");
-			background-color: rgba(19, 19, 23, 0.5);
+			background-color: rgba(255, 255, 255, 0);
 			border-radius: 4px;
 			content: '';
 			display: block;
@@ -1103,7 +1103,7 @@ input, select, textarea {
 				}
 
 				#main article .close:hover:before {
-					background-color: rgba(255, 255, 255, 0.075);
+					background-color: rgba(193, 12, 12, 0.075);
 				}
 
 				#main article .close:active:before {

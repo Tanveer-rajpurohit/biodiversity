@@ -157,7 +157,7 @@ html,body{height: 100%;}
 .welcome-hero{
     position: relative;
     /* background: url(../images/welcome-hero/welcome-banner.jpg) no-repeat; */
-    background: url(../images/biodiversity-image1.jpg) no-repeat;
+    background: url(../images/about/9.jpg) no-repeat;
     /* image-rendering: optimizeQuality; */
     background-position: center;
     background-size: cover;
@@ -166,13 +166,13 @@ html,body{height: 100%;}
 
 /* .welcome-txt */
 .welcome-txt h2 {
-    font-size: 150px;
+    font-size: 80px;
     font-weight:800;
     line-height: 1.51;
     color: #000;
 }
 .welcome-txt p {
-    color: #484848;
+    color: whitesmoke;
     line-height: 1.93;
     max-width: 700px;
     margin: 15px 0 55px;
