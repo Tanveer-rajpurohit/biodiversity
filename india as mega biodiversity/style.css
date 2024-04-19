@@ -28,7 +28,7 @@ main {
   view-timeline: --section;
 
   /* Set each section to the full dynamic height of the viewport */
-  height: 100dvh;
+  height: 110dvh;
 }
 @media screen and (max-width:400px){
   footer {
