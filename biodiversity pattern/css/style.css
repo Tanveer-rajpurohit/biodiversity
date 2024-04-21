@@ -21,7 +21,7 @@ Table Of Contents:
 /*     General Styles     */
 /**************************/
 :root {
-	--primary: #00B285;
+	/* --primary: #00B285; */
 	--primary-light:#ffffff ;
 	--secondary: #0ee951;
 	--tertiary: #00dabf;
@@ -133,7 +133,7 @@ li {
 	font-weight: 500;
 	font-size: 0.875rem;
 	line-height: 0.875rem;
-	/* background-color: var(--primary); */
+	background-color: var(--primary);
 	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.025);
 }
 
@@ -248,15 +248,16 @@ li {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	z-index: -11;
 }
 
 .para {
   	width: 50%;
 }
 
-.para-light {
+/* .para-light {
   	opacity: 0.7;
-}
+} */
 
 
 /***********************/
@@ -278,64 +279,6 @@ li {
 /******************/
 /*     Button     */
 /******************/
-.btn {
-	color: white;
-	border-radius: 0;
-	border-width: 2px;
-	padding: 10px 30px;
-	border-image-slice: 1;
-	background-image: none;
-	background: transparent;
-	border-image-source: var(--gradient);
-	box-shadow: 5px 5px 0px 0px var(--secondary);
-}
-
-.btn:hover {
-	color: white;
-	box-shadow: none;
-	border-radius: 0;
-	padding: 10px 30px;
-	transform: translate(5px, 5px);
-}
-
-/* Email - Newsletter Button */
-.btn-secondary {
-	color: black;
-	border-width: 2px;
-	padding: 10px 30px;
-	border-image-slice: 1;
-	background-image: none;
-	background: transparent;
-	border-image-source: var(--gradient);
-}
-
-.btn-secondary:hover {
-	color: black;
-	padding: 10px 30px;
-	background-image: var(--gradient);
-}
-
-/* Other Pages Button */
-.btn-tertiary {
-	color: black;
-	border-radius: 0;
-	border-width: 2px;
-	padding: 10px 30px;
-	border-image-slice: 1;
-	background-image: none;
-	background: transparent;
-	border-image-source: var(--gradient);
-	box-shadow: 5px 5px 0px 0px var(--secondary);
-}
-
-.btn-tertiary:hover {
-	color: black;
-	box-shadow: none;
-	border-radius: 0;
-	padding: 10px 30px;
-	transform: translate(5px, 5px);
-}
-
 
 /********************/
 /*     Services     */
