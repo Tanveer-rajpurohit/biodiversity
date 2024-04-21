@@ -130,23 +130,34 @@ a{
     max-width: 30%;
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: left;
 }
 .nextPrevArrows button{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    
+    width: 85px;
+    height: 35px;  
+    border-radius: 25px;  
     background-color: #14ff72cb;
     border: none;
-    color: #fff;
+    color: #000000;
     font-family: monospace;
     font-weight: bold;
-    transition: .5s;
+    transition: .1s;
     cursor: pointer;
+}
+@media (min-width:800px){
+    .nextPrevArrows button{
+    
+        width: 95px;
+        height: 42px;  
+        border-radius: 35px;  
+        font-size: 15px;
+    }
 }
 .nextPrevArrows button:hover{
     background-color: #fff;
     color: #000;
+    
 }
 
 /* Animation Part */
