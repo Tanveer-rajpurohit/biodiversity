@@ -28,9 +28,9 @@ main {
   view-timeline: --section;
 
   /* Set each section to the full dynamic height of the viewport */
-  height: 110dvh;
+  height: 130dvh;
 }
-@media screen and (max-width:400px){
+@media screen and (max-width:575px){
   footer {
     /* Creating a snapping rule on the section element */
     scroll-snap-align: start;
@@ -40,7 +40,7 @@ main {
    view-timeline: --section;
 
     /* Set each section to the full dynamic height of the viewport */
-    height: 130dvh;
+    height: 190dvh;
 }
 .text{
   font-size: 10px;
