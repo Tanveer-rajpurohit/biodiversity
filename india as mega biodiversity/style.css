@@ -1,222 +1,195 @@
-@layer base, rhythm, layout, components, default, overwrites;
-
-html {
-  /* Create a snapping rule on the html element */
-  scroll-snap-type: y mandatory;
-
-  /* Create a timeline scope, so we can target any element on the page */
-  timeline-scope: --section, --main, --site-header;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;800&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Playfair Display", serif;
+}
+body {
+	overflow-x: hidden;
+}
+div.banner {
+	width: 100%;
+	min-height: 100vh;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-/* We'll want to match these colors for the best melty effect */
-/* But play around with them (and add a color to section) to see happens */
-body,
-.content {
-  background-color: var(--color-background, black);
+div.banner > h1 {
+	background-image: url(https://64.media.tumblr.com/a7a714640427348c50efe1d846f348ff/tumblr_mw3vzbT83s1r5w12ko1_400.gifv);
+	font-size: 8.8em;
+	font-weight: 800;
+	color: #fff;
+	text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-font-smoothing: antialiased;
+	text-transform: uppercase;
 }
 
-main {
-  view-timeline: --main; 
+div.content-area {
+	width: 100%;
+	min-height: 100vh;
 }
 
-.section,footer {
-  /* Creating a snapping rule on the section element */
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-
-  /* Attach the timeline to the section element*/
-  view-timeline: --section;
-
-  /* Set each section to the full dynamic height of the viewport */
-  height: 130dvh;
-}
-@media screen and (max-width:575px){
-  footer {
-    /* Creating a snapping rule on the section element */
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-
-    /* Attach the timeline to the section element*/
-   view-timeline: --section;
-
-    /* Set each section to the full dynamic height of the viewport */
-    height: 190dvh;
-}
-.text{
-  font-size: 10px;
-}
-}
-@media screen and (min-width:400px){
-.text{
-  font-size: 16px;
-  padding-bottom: 80px;
-}
+div.wrapper {
+	display: grid;
+	grid-template-columns: 50%;
+	grid-template-rows: auto;
+	grid-template-areas: "content image";
+	height: auto;
 }
 
-.content {
-  /* Fix the content, so it doesn't scroll with the section */
-  overflow: hidden;
-  position: fixed;
-  inset: 0;
-
-  /* Animate the content based on the section scrolling */
-  --contrast: 4;
-  --blur: 0.5rem;
-
-  animation: blink ease-in-out both;
-  animation-timeline: --section;
+div.content {
+	grid-area: "content";
+	margin: 40px;
+	line-height: 30px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
 }
 
-@keyframes blink {
-  0%,
-  100% {
-    filter: blur(var(--blur)) contrast(var(--contrast));
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  50% {
-    filter: blur(0) contrast(1);
-    opacity: 1;
-    visibility: visible;
-  }
+div.content > h2 {
+	font-weight: bolder;
 }
 
-/* 
-  This is a bit of a hack to get the indicator to work because I'm lazy.
-  We're translating the dot from the top to the bottom of its parent,
-  using the browser scroll position as the animation timeline.
-  It's not really matched up to the scrolling sections, only appears to be.
-*/
-.indicator::before {
-  animation: indicate linear both;
-  animation-timeline: --main;
-  animation-range: contain;
+div.image-area {
+	grid-area: "image";
 }
 
-/* And we're manually setting the colors because see: lazy comment above */
-@keyframes indicate {
-  0% {
-    --color-indicator: var(--color-primary);
-    transform: translateY(0);
-  }
-
-  25% {
-    --color-indicator: var(--color-yellow);
-  }
-
-  50% {
-    --color-indicator: var(--color-secondary);
-  }
-
-  75% {
-    --color-indicator: var(--color-red);
-  }
-
-  100% {
-    --color-indicator: var(--color-purple);
-    transform: translateY(
-      calc(var(--indicator-total-height) - var(--indicator-size))
-    );
-  }
+div.image-area > img {
+	width: 100%;
+	max-height: 600px;
+	position: relative;
+	border-radius: 25px;
+	padding: 15px;
 }
 
-/* Remove gradient indicator on scroll-to-end (visible on small screens */
-
-.site-header label:last-of-type {
-  view-timeline: --site-header inline;
+div.flex-div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
 }
 
-.site-header::after {
-  animation: fade-scroll ease-in-out both;
-  animation-timeline: --site-header;
-  animation-range: entry-crossing;
+h2.feed {
+	text-align: center;
+	font-weight: bolder;
+	margin: 6%;
+	font-size: 4.6em;
 }
 
-@keyframes fade-scroll {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+div.card {
+	padding: 10px 20px 10px 20px;
+	background-color: aquamarine;
+	width: 500px;
+	height: auto;
+	border-radius: 15px;
+	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+	margin: 40px;
+	border: 1px solid #fff;
 }
 
-/* Change animation based on radio checked */
-body:has([value="horizontal-scroll"]:checked) .content {
-  /* 
-    The only reason we're repeat these two properties instead of simply 
-    setting `animation-name` is so the polyfill will pick them up 
-    They're flaky though and tend to get stuck. You might need to
-    refresh the page and select an option before scrolling
-  */
-  animation: horizontal-scroll ease-in-out both;
-  animation-timeline: --section;
+div.card > img {
+	width: 100%;
+	max-height: 300px;
+	/* border-top-left-radius: 15px;
+	border-top-right-radius: 15px; */
+	border-radius: 15px;
 }
 
-body:has([value="backwards-scroll"]:checked) .content {
-  animation: backwards-scroll ease-in-out both;
-  animation-timeline: --section;
+div.card > span {
+	margin: 20px 10px;
+	font-size: x-large;
+	font-weight: bold;
 }
 
-body:has([value="zoom-scroll"]:checked) .content {
-  animation: zoom-scroll ease-in-out both;
-  animation-timeline: --section;
+.hidden {
+	opacity: 0;
+	filter: blur(5px);
+	transform: translatex(-100%);
+	transition: 1s all;
 }
 
-/* Alternative animations */
-/* Very cool, try it */
-@keyframes horizontal-scroll {
-  0% {
-    transform: translate3d(100%, 0%, 0);
-  }
-
-  50% {
-    transform: none;
-  }
-
-  100% {
-    transform: translate3d(-100%, 0%, 0);
-  }
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translatex(0);
+	transition: 1s all;
 }
 
-/* Befuddling, try it */
-@keyframes backwards-scroll {
-  0% {
-    transform: translate3d(0%, -100%, 0);
-  }
-
-  50% {
-    transform: none;
-  }
-
-  100% {
-    transform: translate3d(0%, 100%, 0);
-  }
+footer.indesign-footer {
+	width: 100%;
+	height: 100%;
+	box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+	padding: 10px;
 }
 
-/* WIP */
-@keyframes zoom-scroll {
-  0% {
-    filter: blur(5rem);
-    transform: scale(0);
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  50% {
-    filter: blur(0);
-    transform: none;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  100% {
-    filter: blur(3rem);
-    transform: scale(1.5);
-    opacity: 0;
-    visibility: hidden;
-  }
+div.footer-wrapper {
+	display: flex;
+	justify-content: center;
+	align-content: baseline;
 }
 
+div.id-letter,
+div.useful-links {
+	width: 50%;
+	height: auto;
+}
+
+div.id-letter > span {
+	font-size: 4.4em;
+	font-weight: bolder;
+	background-image: url(https://img.freepik.com/free-vector/hand-drawn-flat-groovy-psychedelic-background_23-2149074391.jpg);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-font-smoothing: antialiased;
+}
+
+div.useful-links > ul {
+	list-style: none;
+}
+
+div.useful-links > ul > li > a {
+	text-decoration: none;
+	color: #242424;
+	cursor: pointer;
+}
+
+@media (max-width: 856px) {
+	div.banner > h1 {
+		font-size: 2em;
+	}
+
+	div.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	div.wraper-reverse {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+}
+
+@media (max-width: 856px) {
+	div.card {
+		width: 400px;
+        height: auto;
+	}
+}
+
+@media (max-width: 856px){
+	div.banner {
+		width: 100%;
+		min-height: 500px;
+	}
+}
