@@ -82,6 +82,8 @@ a{
 
 .slider .list .item .button .Explore:hover{
     letter-spacing: 3px;
+    border-radius: 25px;
+    background-color: #14ff72cb;
 }
 .slider .list .item .button .Explore:nth-child(2){
     background-color: transparent;
